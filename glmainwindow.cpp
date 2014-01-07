@@ -19,7 +19,7 @@ GLMainWindow::GLMainWindow(QWidget *parent) :
     gameSpeed = 0;
 
     timer = new QTimer();
-    timer->start(10);
+    timer->start(15);
     connect(timer, SIGNAL(timeout()), this, SLOT(repaint()));
 }
 
