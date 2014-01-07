@@ -1,3 +1,5 @@
+
+
 #include "opponentqueue.h"
 
 OpponentQueue::OpponentQueue()
