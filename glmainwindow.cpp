@@ -39,6 +39,8 @@ void GLMainWindow::initializeGL()
     opponentQueue->loadTexture();
     this->setGameSpeed();
     road->setWindowSize(this->size());
+
+    currentScore = 0;
 }
 
 void GLMainWindow::paintGL()
@@ -51,6 +53,9 @@ void GLMainWindow::paintGL()
         obj = *i;
         obj->render();
     }
+
+    emit score(currentScore += gameSpeed);
+
     if(player->collision())
     {
         player->loadCollisionTexture();

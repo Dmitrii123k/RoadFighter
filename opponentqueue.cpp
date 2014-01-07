@@ -39,7 +39,7 @@ void OpponentQueue::render()
 
 void OpponentQueue::loadTexture()
 {
-    texture = SOIL_load_OGL_texture("opponent.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    texture = SOIL_load_OGL_texture("images/opponent.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     if(texture == 0)
     {
         std::cout << "Unable to load texture" << std::endl;

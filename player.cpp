@@ -18,7 +18,7 @@ void Player::render()
 
 void Player::loadTexture()
 {
-    texture = SOIL_load_OGL_texture("player.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    texture = SOIL_load_OGL_texture("images/player.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     if(texture == 0)
     {
         std::cout << "Unable to load texture" << std::endl;
@@ -27,7 +27,7 @@ void Player::loadTexture()
 
 void Player::loadCollisionTexture()
 {
-    texture = SOIL_load_OGL_texture("playerCrash.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    texture = SOIL_load_OGL_texture("images/playerCrash.png", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     if(texture == 0)
     {
         std::cout << "Unable to load texture" << std::endl;
@@ -73,7 +73,7 @@ bool Player::opponentCollision()
         opp = *i;
         if(opp->getLower() <= this->getUpper() && opp->getLower() >= this->getLower())
         {
-            if(opp->getLeft() >= opp->getLeft() && opp->getLeft() <= this->getRight())
+            if(opp->getLeft() >= this->getLeft() && opp->getLeft() <= this->getRight())
             {
                 return true;
             }
@@ -84,7 +84,7 @@ bool Player::opponentCollision()
         }
         else if(opp->getUpper() <= this->getUpper() && opp->getUpper() >= this->getLower())
         {
-            if(opp->getLeft() >= opp->getLeft() && opp->getLeft() <= this->getRight())
+            if(opp->getLeft() >= this->getLeft() && opp->getLeft() <= this->getRight())
             {
                 return true;
             }

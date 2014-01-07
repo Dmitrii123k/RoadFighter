@@ -30,9 +30,10 @@ public:
     void paintGL();
     void initializeGL();
     void resizeEvent(QResizeEvent *);
-
+    int currentScore;
 signals:
-    
+    void score(int newScore);
+
 public slots:
     void keyPressEvent(QKeyEvent *);
 
