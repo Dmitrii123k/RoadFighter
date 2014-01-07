@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 void MainWindow::updateScore(int newScore)
 {
-    this->scoreLabel->setText(QString::number(newScore));
+    this->scoreLabel->setText(QString::number(newScore / 100));
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
